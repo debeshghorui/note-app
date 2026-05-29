@@ -1,56 +1,69 @@
-# Welcome to your Expo app 👋
+# Note App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A simple note-taking app built with Expo Router and React Native. It starts with a list of notes, lets you open a note to edit, and saves changes back to the list.
 
-## Get started
+## Features
+
+- View a list of notes with title, date, and a short preview
+- Create a new note with the floating action button
+- Edit an existing note and save changes on exit
+- Dark, minimal UI optimized for reading and writing
+
+## Tech Stack
+
+- Expo SDK 56 and Expo Router
+- React Native
+- TypeScript (app code currently uses JS/TSX)
+
+## Project Structure
+
+- Main layout: [src/app/_layout.tsx](src/app/_layout.tsx)
+- Home screen (notes list): [src/app/index.tsx](src/app/index.tsx)
+- Notes list view: [src/app/Notes.tsx](src/app/Notes.tsx)
+- Note editor screen: [src/app/Note.tsx](src/app/Note.tsx)
+- Note card component: [src/app/NoteCard.tsx](src/app/NoteCard.tsx)
+
+## Getting Started
 
 1. Install dependencies
 
    ```bash
-   npm install
+   bun install
    ```
 
 2. Start the app
 
    ```bash
-   npx expo start
+   bun run start
    ```
 
-In the output, you'll find options to open the app in a
+3. Run on a platform
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+   ```bash
+   bun run android
+   bun run ios
+   bun run web
+   ```
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Notes on Data
 
-## Get a fresh project
+Notes are kept in local component state for now, seeded with sample data in [src/app/index.tsx](src/app/index.tsx). There is no persistence yet.
 
-When you're ready, run:
+## Roadmap Ideas
 
-```bash
-npm run reset-project
-```
+- Persist notes to local storage or a backend
+- Add search and tags
+- Add note deletion and pinning
+- Improve typography and theming options
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Scripts
 
-### Other setup steps
+- `bun run start`: Start the Expo dev server
+- `bun run android`: Start and open Android
+- `bun run ios`: Start and open iOS
+- `bun run web`: Start and open web
+- `bun run lint`: Lint the project
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+## Credits
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Built with [Expo](https://expo.dev/) and [Expo Router](https://docs.expo.dev/router/introduction/).
